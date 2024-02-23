@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center align content */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .pink-text {
+            font-size: 24px;
+            color: pink;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi! This is an Invitation.</h1>
+        <p>Please click proceed</p>
+        <button onclick="main()">Proceed</button>
+    </div> <!-- Close the container div here -->
+
+    <div class="pink-text">
+       <iframe src="https://giphy.com/embed/KDhpUK0NwcqDhJiTSi" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/love-amor-carta-KDhpUK0NwcqDhJiTSi">via GIPHY</a></p>
+    </div>
+    
+    <script>
+        function main() {
+            const name = prompt("Enter your name:");
+
+            if (name === "Mingyu") {
+                let ans = prompt("Are you single? y/n");
+
+                if (ans === "y") {
+                    ans = prompt("Great! Can you be my Valentine Date? y/n");
+
+                    if (ans === "y") {
+                        // Add the image and text to the pink-text div
+                        document.querySelector('.pink-text').innerHTML = `
+                            <img src="https://media.giphy.com/media/gDfteqLchLcRTtjAD7/giphy.gif" alt="Your Image" width="300">
+                            <p>I'll pick you up at 7pm! See you, Kim Mingyu! 💐💖💐💖<br>-Wonwoo Jeon of CEIT</p>
+                        `;
+                    }
+                } else if (ans === "n") {
+                    document.querySelector('.pink-text').innerHTML += "<p>Well, at least we gave it a shot! Thanks for being upfront with me. 💐💖</p>";
+                }
+            } else {
+                document.write("Thank You for trying, but this was made specifically for Mingyu Kim of CLAS. I hope you find yours soon!<br>");
+            }
+        }
+    </script>
+</body>
+</html>
